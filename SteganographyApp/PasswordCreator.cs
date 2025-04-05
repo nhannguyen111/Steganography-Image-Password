@@ -71,7 +71,7 @@ namespace SteganographyApp
             }
 
             // Normalize password
-            return $"R{startIndex}-{passwordLength}";
+            return $"{startIndex}-{passwordLength}";
 
 
             //return currPassword;
@@ -81,7 +81,7 @@ namespace SteganographyApp
         {
             string data = Parser.GetReadableData(metaData);
 
-            string keyparse= key.Remove(0,1);
+            string keyparse = key;
             string keyStart = "";
             string keyLength = "";
             bool swap = false;
@@ -89,8 +89,8 @@ namespace SteganographyApp
             foreach (char c in keyparse)
             {
                 if (c == '-') { 
-                swap = true;
-            }
+                    swap = true;
+                }
                 else if (!swap && char.IsDigit(c))
                 {
                     keyStart += c;

@@ -71,7 +71,7 @@ namespace SteganographyApp
 
         private void CreatePassword_Clicked(object sender, EventArgs e)
         {
-            UserPassword.Text = PasswordCreator.getKey(metadata, 16);
+            UserPassword.Text = PasswordCreator.getKey(metadata, UserConfigPopUp.passwordSize);
         }
     }
 }

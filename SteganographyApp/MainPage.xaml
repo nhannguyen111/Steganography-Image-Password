@@ -20,7 +20,7 @@
                 Margin="10"
                 Padding="20"
                 HorizontalOptions="Fill"
-                VerticalOptions="Fill"
+                VerticalOptions="Center"
                 Clicked="OnOptionAClicked" />
 
             <!-- Right Button -->
@@ -35,7 +35,7 @@
                 Margin="10"
                 Padding="20"
                 HorizontalOptions="Fill"
-                VerticalOptions="Fill"
+                VerticalOptions="Center"
                 Clicked="OnOptionBClicked" />
         </Grid>
 
