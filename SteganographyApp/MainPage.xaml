@@ -10,7 +10,7 @@
         <Grid Grid.Row="0" ColumnDefinitions="*,*">
             <!-- Left Button -->
             <Button 
-                Text="Create Password"
+                Text="Create Password Address"
                 Grid.Column="0"
                 FontSize="26"
                 FontAttributes="Bold"
@@ -25,7 +25,7 @@
 
             <!-- Right Button -->
             <Button 
-                Text="Get Password"
+                Text="Get Password from Pin"
                 Grid.Column="1"
                 FontSize="26"
                 FontAttributes="Bold"
