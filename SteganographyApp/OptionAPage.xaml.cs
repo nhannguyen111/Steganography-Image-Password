@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Maui.Controls;         // ← for ImageSource
 using Microsoft.Maui.Storage;          // ← for FilePicker
 using SteganographyApp.ImageToMetaData;
+using SteganographyApp.PasswordGenerator;
 
 namespace SteganographyApp
 {
@@ -11,6 +12,7 @@ namespace SteganographyApp
     {
         // you can replace this with your real password logic later
         string password = "test";
+        string metadata = "";
 
         public OptionAPage()
         {
@@ -30,6 +32,9 @@ namespace SteganographyApp
 
                 if (result == null)
                     return;
+
+                string data = ConvertImage.DataDump(result.FullPath);
+                metadata = Parser.GetReadableData(data);
 
                 // 1) Load the file into a MemoryStream
                 using var originalStream = await result.OpenReadAsync();
@@ -62,6 +67,11 @@ namespace SteganographyApp
         {
             await Clipboard.Default.SetTextAsync(password);
             await DisplayAlert("Copied", "New Password has been copied to clipboard! 👉👈", "OK");
+        }
+
+        private void CreatePassword_Clicked(object sender, EventArgs e)
+        {
+            UserPassword.Text = PasswordCreator.getKey(metadata, 16);
         }
     }
 }

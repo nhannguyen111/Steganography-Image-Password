@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SteganographyApp.Parser
+namespace SteganographyApp
 {
-    internal class Parser
+    public static class Parser
     {
-        static string Encoding(string data)
+        public static string GetReadableData(string data)
         {
             string readableData = "";
 
@@ -24,8 +24,8 @@ namespace SteganographyApp.Parser
 
         static char GetPrintableAscii(int n)
         {
-            int start = 33;
-            int total = 122;
+            int start = 32;
+            int total = 95;
             int asciiValue = start + (n % total);
             return (char)asciiValue;
         }

@@ -19,25 +19,39 @@
 
                     <!-- This is the image that the user taps to pick a new one -->
                     <Image
-            x:Name="MyImageControl"
-            Source="selectimg.png"
-            HeightRequest="250"
-            WidthRequest="250"
-            Aspect="AspectFit"
-            Margin="10">
+                        x:Name="MyImageControl"
+                        Source="selectimg.png"
+                        HeightRequest="250"
+                        WidthRequest="250"
+                        Aspect="AspectFit"
+                        Margin="10">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer
-                Tapped="UploadBtn_Clicked" />
+                                Tapped="UploadBtn_Clicked" />
                         </Image.GestureRecognizers>
                     </Image>
+                </StackLayout>
+
+                <StackLayout>
+                    <Entry
+                    x:Name="UserKey"
+                    Placeholder="Enter a custom pin for this password here"
+                    HorizontalOptions="Fill" />
                 </StackLayout>
 
                 <!-- Copy button -->
                 <StackLayout>
                     <Button
-            x:Name="CopyPassword"
-            Text="Copy Password"
-            Clicked="CopyPassword_Clicked" />
+                    x:Name="CreatePassword"
+                    Text="Create Password"
+                    Clicked="CreatePassword_Clicked" />
+                </StackLayout>
+
+                <StackLayout>
+                    <Entry
+                    x:Name="UserPassword"
+                    Placeholder="Press create password to generate one"
+                    HorizontalOptions="Fill" />
                 </StackLayout>
 
             </VerticalStackLayout>

@@ -13,9 +13,9 @@ namespace SteganographyApp.ImageToMetaData
 /// The purpose of this class is to convert different image types to metadata such as png, jpg, etc.
 /// from the metadata it will be sent for processing
 /// </summary>
-    public class ConvertImage
+    public  static class ConvertImage
     {
-        public string DataDump(string imagePath) 
+        public static string DataDump(string imagePath) 
         {
             string metaData = "";
             byte[] bytes = File.ReadAllBytes(imagePath);

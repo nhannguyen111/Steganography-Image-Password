@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace SteganographyApp.PasswordValidator
+namespace SteganographyApp
 {
     internal class PasswordValidator
     {
@@ -44,8 +44,14 @@ namespace SteganographyApp.PasswordValidator
             return results;
         }
 
-        internal static string CreateValidPassword(string segment, List<string> reasons, string section)
+        internal static string CreateValidPassword(string segment, int size)
         {
+            List<string> reasons = IsValidPasswordSegment(segment, size);
+
+            if (reasons.Contains("None")) { 
+                return segment;
+            }
+
             string validPassword = segment;
             int index;
             List<int> indexToReplace = new List<int>();
@@ -81,7 +87,7 @@ namespace SteganographyApp.PasswordValidator
                 "Zz6!"
             };
 
-            index = GetIndex(section);
+            index = GetIndex(segment);
             replacementString = passwordSegments[index];
 
 

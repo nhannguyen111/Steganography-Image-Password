@@ -3,20 +3,53 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SteganographyApp.OptionBPage"
              Title="OptionBPage">
-    <VerticalStackLayout>
-        <ScrollView>
-            <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
 
+    <ScrollView>
+        <VerticalStackLayout>
+            <StackLayout>
+                <Label
+                    Text="Password To Image Preview!"
+                    Style="{StaticResource Headline}"
+                    SemanticProperties.HeadingLevel="Level1" />
+            </StackLayout>
+
+            <StackLayout>
+                <Image
+                    x:Name="MyImageControl"
+                    Source="selectimg.png"
+                    HeightRequest="250"
+                    WidthRequest="250"
+                    Aspect="AspectFit"
+                    Margin="10">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="UploadBtn_Clicked" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+
+            <StackLayout>
                 <Entry
-            x:Name="UserInput"
-            Placeholder="Enter your text here"
-            HorizontalOptions="Fill" />
+                    x:Name="UserPin"
+                    Placeholder="Enter the pin for this password"
+                    HorizontalOptions="Fill" />
+            </StackLayout>
 
-                
+            <StackLayout>
+                <Button
+                    x:Name="GetPassword"
+                    Text="Get Password"
+                    Clicked="GetPassword_Clicked" />
+            </StackLayout>
 
-            </VerticalStackLayout>
-        </ScrollView>
-    </VerticalStackLayout>
+            <StackLayout>
+                <Entry
+                    x:Name="UserPasswordFull"
+                    Placeholder="Press create password to generate one"
+                    HorizontalOptions="Fill" />
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
 </ContentPage>
