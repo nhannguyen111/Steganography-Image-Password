@@ -1,4 +1,7 @@
-﻿namespace SteganographyApp
+﻿using SteganographyApp.ImageToMetaData;
+using System.Diagnostics;
+
+namespace SteganographyApp
 {
     public partial class MainPage : ContentPage
     {
@@ -7,6 +10,12 @@
         public MainPage()
         {
             InitializeComponent();
+            ConvertImage convertImage = new ConvertImage();
+            string data = convertImage.DataDump(@"C:\Users\justi\Downloads\Ocean.gif");
+            //foreach (char x in data.ToCharArray()) {
+            //    Debug.WriteLine();
+            //}
+            
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
