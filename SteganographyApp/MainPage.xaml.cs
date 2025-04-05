@@ -25,7 +25,13 @@
         {
             var UserConfigPopUp = new UserConfigPopUp();
 
-            var newWindow = new Window(UserConfigPopUp);
+            // Set preferred size (Windows/macOS only)
+            var newWindow = new Window(UserConfigPopUp)
+            {
+                Width = 500,
+                Height = 600
+            };
+
             Application.Current.OpenWindow(newWindow);
         }
 
