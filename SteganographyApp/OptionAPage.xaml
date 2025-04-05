@@ -4,9 +4,41 @@
              x:Class="SteganographyApp.OptionAPage"
              Title="OptionAPage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <ScrollView>
+            <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+                <StackLayout>
+                    <Label
+                    Text="Password To Image Preview!"
+                    Style="{StaticResource Headline}"
+                    SemanticProperties.HeadingLevel="Level1" />
+                                        <!-- Image preview area -->
+                                        <Image x:Name="MyImageControl"
+                       Source="selectimg.png"
+                    HeightRequest="250"
+                    WidthRequest="250"
+                    Aspect="AspectFit"
+                    Margin="10"
+                    />
+                </StackLayout>
+                
+               
+
+                <StackLayout>
+                    <Button Text="Upload Image" Clicked="UploadBtn_Clicked" />
+                </StackLayout>
+                <StackLayout>
+                    <Button
+                        x:Name="CopyPassword"
+                        Text="Copy Password"
+                        Clicked="CopyPassword_Clicked"
+                        />
+                </StackLayout>
+                
+
+            </VerticalStackLayout>
+            </ScrollView>
     </VerticalStackLayout>
 </ContentPage>
