@@ -14,21 +14,21 @@
                     Text="Password To Image Preview!"
                     Style="{StaticResource Headline}"
                     SemanticProperties.HeadingLevel="Level1" />
-                                        <!-- Image preview area -->
-                                        <Image x:Name="MyImageControl"
-                       Source="selectimg.png"
+
+                    <Image x:Name="MyImageControl"
+                        
+                    Source="selectimg.png"
                     HeightRequest="250"
                     WidthRequest="250"
                     Aspect="AspectFit"
-                    Margin="10"
-                    />
+                    Margin="10"                      
+                    >
+                        <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="UploadBtn_Clicked"/>
+                    </Image.GestureRecognizers>
+                    </Image>
                 </StackLayout>
                 
-               
-
-                <StackLayout>
-                    <Button Text="Upload Image" Clicked="UploadBtn_Clicked" />
-                </StackLayout>
                 <StackLayout>
                     <Button
                         x:Name="CopyPassword"
