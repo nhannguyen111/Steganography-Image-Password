@@ -66,13 +66,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="UserConfig.xaml.cs">
+	    <DependentUpon>UserConfig.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="OptionAPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="OptionBPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="UserConfigPopUp.xaml">
+	  <MauiXaml Update="UserConfig.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

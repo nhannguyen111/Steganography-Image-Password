@@ -18,18 +18,9 @@ namespace SteganographyApp
             
         }
 
-        private void OnOpenUserConfigWindowClicked(object sender, EventArgs e)
+        private async void OnOpenUserConfigWindowClicked(object sender, EventArgs e)
         {
-            var UserConfigPopUp = new UserConfigPopUp();
-
-            // Set preferred size (Windows/macOS only)
-            var newWindow = new Window(UserConfigPopUp)
-            {
-                Width = 500,
-                Height = 600
-            };
-
-            Application.Current.OpenWindow(newWindow);
+            await Shell.Current.GoToAsync(nameof(UserConfigPopUp));
         }
         private async void OnOptionAClicked(object sender, EventArgs e)
         {
