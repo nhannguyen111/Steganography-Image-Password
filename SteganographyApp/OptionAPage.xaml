@@ -11,7 +11,7 @@
 
             <!-- Page Title -->
             <Label
-                Text="Password to Image Preview"
+                Text="Generate Password Address"
                 FontSize="28"
                 FontAttributes="Bold"
                 TextColor="#FFFFFF"
@@ -39,7 +39,7 @@
             <!-- Create Password Button -->
             <Button
                 x:Name="CreatePassword"
-                Text="Create Password"
+                Text="Create Pin"
                 Clicked="CreatePassword_Clicked"
                 BackgroundColor="#B62C7A"
                 TextColor="White"
