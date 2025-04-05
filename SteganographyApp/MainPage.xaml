@@ -14,36 +14,30 @@
                 SemanticProperties.HeadingLevel="Level1" />
             <!-- Image preview area -->
             <Image x:Name="MyImageControl"
+                   Source="selectimg.png"
                 WidthRequest="500"
                 HeightRequest="500"
                 Aspect="AspectFit"
                 Margin="10"
-                BackgroundColor="LightGray"/>
+                />
 
             <!-- We can probably remove -->
             <Label
-                Text=" 500 x 500 pixel limit"
+                Text=" Your New Password"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
             <StackLayout Padding="20">
                 <Button Text="Upload Image" Clicked="UploadBtn_Clicked" />
-
-                
             </StackLayout>
             <Button
                 x:Name="CopyPassword"
                 Text="Copy Password"
                 SemanticProperties.Hint="Copy generated Password"
                 Clicked="CopyPassword_Clicked"
-                HorizontalOptions="Fill"/>
+                HorizontalOptions="Fill"
+                />
 
         </VerticalStackLayout>
     </ScrollView>
