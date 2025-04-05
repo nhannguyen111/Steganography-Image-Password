@@ -65,7 +65,7 @@ namespace SteganographyApp
 
         private async void CopyPassword_Clicked(object sender, EventArgs e)
         {
-            await Clipboard.Default.SetTextAsync(password);
+            await Clipboard.Default.SetTextAsync(UserPassword.Text);
             await DisplayAlert("Copied", "New Password has been copied to clipboard! 👉👈", "OK");
         }
 
