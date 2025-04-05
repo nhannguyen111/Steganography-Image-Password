@@ -9,18 +9,6 @@
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
-
         private void OnOpenUserConfigWindowClicked(object sender, EventArgs e)
         {
             var UserConfigPopUp = new UserConfigPopUp();
@@ -33,6 +21,15 @@
             };
 
             Application.Current.OpenWindow(newWindow);
+        }
+        private async void OnOptionAClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(OptionAPage));
+        }
+
+        private async void OnOptionBClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(OptionBPage));
         }
 
     }
