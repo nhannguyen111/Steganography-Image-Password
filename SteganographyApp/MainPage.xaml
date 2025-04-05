@@ -7,19 +7,22 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a hovercraft number nine" />
 
             <Label
-                Text="Hello, World!"
+                Text="Password To Image Preview!"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
+            <!-- Image preview area -->
+            <Image x:Name="MyImageControl"
+                WidthRequest="500"
+                HeightRequest="500"
+                Aspect="AspectFit"
+                Margin="10"
+                BackgroundColor="LightGray"/>
 
+            <!-- We can probably remove -->
             <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
+                Text=" 500 x 500 pixel limit"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
@@ -33,13 +36,7 @@
             <StackLayout Padding="20">
                 <Button Text="Upload Image" Clicked="UploadBtn_Clicked" />
 
-                <!-- Image preview area -->
-                <Image x:Name="MyImageControl"
-           WidthRequest="800"
-           HeightRequest="800"
-           Aspect="AspectFit"
-           Margin="10"
-           BackgroundColor="LightGray"/>
+                
             </StackLayout>
             <Button
                 x:Name="CopyPassword"
