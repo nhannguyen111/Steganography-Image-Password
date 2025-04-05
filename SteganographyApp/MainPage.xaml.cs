@@ -1,25 +1,50 @@
-﻿namespace SteganographyApp
+﻿using SteganographyApp.ImageToMetaData;
+using System.Diagnostics;
+﻿using System.Threading.Tasks;
+
+namespace SteganographyApp
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
 
         public MainPage()
         {
             InitializeComponent();
+            ConvertImage convertImage = new ConvertImage();
+            //string data = convertImage.DataDump(@"C:\Users\justi\Downloads\Ocean.gif");
+            //foreach (char x in data.ToCharArray()) {
+            //    Debug.WriteLine();
+            //}
+            
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void OnOpenUserConfigWindowClicked(object sender, EventArgs e)
         {
-            count++;
+            var UserConfigPopUp = new UserConfigPopUp();
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+            // Set preferred size (Windows/macOS only)
+            var newWindow = new Window(UserConfigPopUp)
+            {
+                Width = 500,
+                Height = 600
+            };
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            Application.Current.OpenWindow(newWindow);
         }
+        private async void OnOptionAClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(OptionAPage));
+        }
+
+        private async void OnOptionBClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(OptionBPage));
+        }
+
+
+
+        
+        // private async Task ClearClipboard() =>await Clipboard.Default.SetTextAsync(null);
     }
 
 }

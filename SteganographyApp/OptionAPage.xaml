@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SteganographyApp.OptionAPage"
+    Title="Option A">
+
+    <VerticalStackLayout>
+
+        <ScrollView>
+            <VerticalStackLayout Padding="30,0" Spacing="25">
+
+                <!-- Preview area -->
+                <StackLayout>
+                    <Label
+            Text="Password To Image Preview!"
+            Style="{StaticResource Headline}"
+            SemanticProperties.HeadingLevel="Level1" />
+
+                    <!-- This is the image that the user taps to pick a new one -->
+                    <Image
+            x:Name="MyImageControl"
+            Source="selectimg.png"
+            HeightRequest="250"
+            WidthRequest="250"
+            Aspect="AspectFit"
+            Margin="10">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                Tapped="UploadBtn_Clicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+
+                <!-- Copy button -->
+                <StackLayout>
+                    <Button
+            x:Name="CopyPassword"
+            Text="Copy Password"
+            Clicked="CopyPassword_Clicked" />
+                </StackLayout>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </VerticalStackLayout>
+</ContentPage>
