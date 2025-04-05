@@ -1,74 +1,62 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SteganographyApp.OptionAPage"
-             Title="Steganography App"
-             BackgroundColor="#f2f2f7">
+<ContentPage
+     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+     x:Class="SteganographyApp.OptionAPage"
+     Title="Option A">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="0" Spacing="0">
+    <VerticalStackLayout>
 
-            <!-- Header Section -->
-            <Label
-                Text="Get Password"
-                FontSize="32"
-                FontAttributes="Bold"
-                TextColor="#333"
-                HorizontalOptions="Center" />
+        <ScrollView>
+            <VerticalStackLayout Padding="30,0" Spacing="25">
 
-            <!-- Image Card Section -->
-            <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
-                <Image x:Name="MyImageControl"
-                    Source="select_an_image.png"
-                    HeightRequest="250"
-                    WidthRequest="250"
-                    Aspect="AspectFit">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="UploadBtn_Clicked" />
-                    </Image.GestureRecognizers>
-                </Image>
-            </VerticalStackLayout>
+                <!-- Preview area -->
+                <StackLayout>
+                    <Label
+             Text="Password To Image Preview!"
+             Style="{StaticResource Headline}"
+             SemanticProperties.HeadingLevel="Level1" />
 
                     <!-- This is the image that the user taps to pick a new one -->
                     <Image
-                        x:Name="MyImageControl"
-                        Source="selectimg.png"
-                        HeightRequest="250"
-                        WidthRequest="250"
-                        Aspect="AspectFit"
-                        Margin="10">
+             x:Name="MyImageControl"
+             Source="select.png"
+             HeightRequest="250"
+             WidthRequest="250"
+             Aspect="AspectFit"
+             Margin="10">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer
-                                Tapped="UploadBtn_Clicked" />
+                 Tapped="UploadBtn_Clicked" />
                         </Image.GestureRecognizers>
                     </Image>
                 </StackLayout>
 
                 <StackLayout>
                     <Entry
-                    x:Name="UserKey"
-                    Placeholder="Enter a custom pin for this password here"
-                    HorizontalOptions="Fill" />
+                     x:Name="UserKey"
+                     Placeholder="Enter a custom pin for this password here"
+                     HorizontalOptions="Fill" />
                 </StackLayout>
 
                 <!-- Copy button -->
                 <StackLayout>
                     <Button
-                    x:Name="CreatePassword"
-                    Text="Create Password"
-                    Clicked="CreatePassword_Clicked" />
+             
+                x:Name="CreatePassword"
+                Text="Create Password"
+                Clicked="CreatePassword_Clicked" />
                 </StackLayout>
 
                 <StackLayout>
                     <Entry
-                    x:Name="UserPassword"
-                    Placeholder="Press create password to generate one"
-                    HorizontalOptions="Fill" />
+                     x:Name="UserPassword"
+                     Placeholder="Press create password to generate one"
+                     HorizontalOptions="Fill" />
                 </StackLayout>
 
-            </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
 
-
-        </VerticalStackLayout>
-    </ScrollView>
+    </VerticalStackLayout>
 </ContentPage>

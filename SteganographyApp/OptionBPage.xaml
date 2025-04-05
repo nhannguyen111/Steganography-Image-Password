@@ -16,7 +16,7 @@
             <StackLayout>
                 <Image
                     x:Name="MyImageControl"
-                    Source="selectimg.png"
+                    Source="select.png"
                     HeightRequest="250"
                     WidthRequest="250"
                     Aspect="AspectFit"
