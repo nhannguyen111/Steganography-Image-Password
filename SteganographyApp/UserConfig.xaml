@@ -20,13 +20,17 @@
             <Frame BackgroundColor="#FFFFFF" CornerRadius="12" Padding="20" HasShadow="True" BorderColor="Black">
                 <VerticalStackLayout Spacing="15">
 
-                    <Label Text="Enter Size of Password:" FontSize="20"/>
-                    
+                    <Label 
+                        Text="Enter Size of Password:" 
+                        FontSize="20" 
+                        TextColor="Black" />
+
                     <Entry x:Name="NumberEntry"
                            Keyboard="Numeric"
                            Placeholder="e.g. 16"
                            FontSize="18"
                            BackgroundColor="White"
+                           TextColor="Black"
                            HeightRequest="40"/>
                     
                     <Button Text="Submit"
