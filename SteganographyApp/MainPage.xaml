@@ -30,6 +30,24 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
+            <StackLayout Padding="20">
+                <Button Text="Upload Image" Clicked="UploadBtn_Clicked" />
+
+                <!-- Image preview area -->
+                <Image x:Name="MyImageControl"
+           WidthRequest="800"
+           HeightRequest="800"
+           Aspect="AspectFit"
+           Margin="10"
+           BackgroundColor="LightGray"/>
+            </StackLayout>
+            <Button
+                x:Name="CopyPassword"
+                Text="Copy Password"
+                SemanticProperties.Hint="Copy generated Password"
+                Clicked="CopyPassword_Clicked"
+                HorizontalOptions="Fill"/>
+
         </VerticalStackLayout>
     </ScrollView>
 
