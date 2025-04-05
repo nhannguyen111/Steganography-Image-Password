@@ -20,14 +20,19 @@ namespace SteganographyApp
 
             string currPassword = "";
 
-            while (currPassword.Length < passwordLength)
+            while (currPassword.Length < passwordLength && startIndex < data.Length)
             {
                 currPassword += data[startIndex];
                 startIndex++;
             }
 
             // If not valid password
-            //getPassword(data, passwordLength);
+            if (currPassword.Length < passwordLength)
+            {
+                getPassword(data, passwordLength);
+            }
+
+            // Normalize password
 
             return currPassword;
         }
