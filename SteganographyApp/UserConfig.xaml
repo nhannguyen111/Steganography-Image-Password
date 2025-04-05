@@ -14,12 +14,14 @@
                 Text="Password Generator Settings"
                 FontSize="28"
                 FontAttributes="Bold"
+                TextColor="White"
                 HorizontalOptions="Center" />
 
-            <Frame BackgroundColor="#E07D8B" CornerRadius="12" Padding="20" HasShadow="True">
+            <Frame BackgroundColor="#FFFFFF" CornerRadius="12" Padding="20" HasShadow="True" BorderColor="Black">
                 <VerticalStackLayout Spacing="15">
 
                     <Label Text="Enter Size of Password:" FontSize="20"/>
+                    
                     <Entry x:Name="NumberEntry"
                            Keyboard="Numeric"
                            Placeholder="e.g. 16"
