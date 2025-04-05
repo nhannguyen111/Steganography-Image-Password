@@ -4,9 +4,19 @@
              x:Class="SteganographyApp.OptionBPage"
              Title="OptionBPage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <ScrollView>
+            <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+                <Entry
+            x:Name="UserInput"
+            Placeholder="Enter your text here"
+            HorizontalOptions="Fill" />
+
+                
+
+            </VerticalStackLayout>
+        </ScrollView>
     </VerticalStackLayout>
 </ContentPage>

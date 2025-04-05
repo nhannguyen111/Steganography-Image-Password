@@ -11,7 +11,7 @@ namespace SteganographyApp
         {
             InitializeComponent();
             ConvertImage convertImage = new ConvertImage();
-            string data = convertImage.DataDump(@"C:\Users\justi\Downloads\Ocean.gif");
+            //string data = convertImage.DataDump(@"C:\Users\justi\Downloads\Ocean.gif");
             //foreach (char x in data.ToCharArray()) {
             //    Debug.WriteLine();
             //}
