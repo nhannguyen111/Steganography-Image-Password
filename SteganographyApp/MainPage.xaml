@@ -1,45 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SteganographyApp.MainPage">
+             x:Class="SteganographyApp.MainPage"
+             BackgroundColor="#f9f9f9">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-
-            <Label
-                Text="Password To Image Preview!"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
-            <!-- Image preview area -->
-            <Image x:Name="MyImageControl"
-                   Source="selectimg.png"
-                WidthRequest="500"
-                HeightRequest="500"
-                Aspect="AspectFit"
+    <Grid RowDefinitions="*,Auto">
+        <!-- Main grid layout for buttons -->
+        <Grid Grid.Row="0" ColumnDefinitions="*,*">
+            <!-- Left Button -->
+            <Button 
+                Text="Create Password"
+                Grid.Column="0"
+                FontSize="26"
+                FontAttributes="Bold"
+                BackgroundColor="#007AFF"
+                TextColor="White"
+                CornerRadius="20"
                 Margin="10"
-                />
-
-            <!-- We can probably remove -->
-            <Label
-                Text=" Your New Password"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
-
-            <StackLayout Padding="20">
-                <Button Text="Upload Image" Clicked="UploadBtn_Clicked" />
-            </StackLayout>
-            <Button
-                x:Name="CopyPassword"
-                Text="Copy Password"
-                SemanticProperties.Hint="Copy generated Password"
-                Clicked="CopyPassword_Clicked"
+                Padding="20"
                 HorizontalOptions="Fill"
-                />
+                VerticalOptions="Fill"
+                Clicked="OnOptionAClicked" />
 
-        </VerticalStackLayout>
-    </ScrollView>
+            <!-- Right Button -->
+            <Button 
+                Text="Get Password"
+                Grid.Column="1"
+                FontSize="26"
+                FontAttributes="Bold"
+                BackgroundColor="#34C759"
+                TextColor="White"
+                CornerRadius="20"
+                Margin="10"
+                Padding="20"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                Clicked="OnOptionBClicked" />
+        </Grid>
 
+        <!-- Floating action button in bottom right corner -->
+        <Grid Grid.Row="1">
+            <Button
+                Text="⚙"
+                Clicked="OnOpenUserConfigWindowClicked"
+                WidthRequest="60"
+                HeightRequest="60"
+                CornerRadius="30"
+                FontSize="26"
+                BackgroundColor="#5856D6"
+                TextColor="White"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Margin="25"
+                ZIndex="2" />
+        </Grid>
+
+
+    </Grid>
 </ContentPage>
