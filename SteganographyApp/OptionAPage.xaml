@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SteganographyApp.OptionAPage"
+             Title="OptionAPage">
+    <VerticalStackLayout>
+        <ScrollView>
+            <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+                <StackLayout>
+                    <Label
+                    Text="Password To Image Preview!"
+                    Style="{StaticResource Headline}"
+                    SemanticProperties.HeadingLevel="Level1" />
+                                        <!-- Image preview area -->
+                                        <Image x:Name="MyImageControl"
+                       Source="selectimg.png"
+                    HeightRequest="250"
+                    WidthRequest="250"
+                    Aspect="AspectFit"
+                    Margin="10"
+                    />
+                </StackLayout>
+                
+               
+
+                <StackLayout>
+                    <Button Text="Upload Image" Clicked="UploadBtn_Clicked" />
+                </StackLayout>
+                <StackLayout>
+                    <Button
+                        x:Name="CopyPassword"
+                        Text="Copy Password"
+                        Clicked="CopyPassword_Clicked"
+                        />
+                </StackLayout>
+                
+
+            </VerticalStackLayout>
+            </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>
