@@ -8,6 +8,7 @@ namespace SteganographyApp
     public partial class MainPage : ContentPage
     {
         int count = 0;
+        string password = "stop goonin";
 
         public MainPage()
         {
@@ -54,11 +55,16 @@ namespace SteganographyApp
             }
         }
 
-        private void CopyPassword_Clicked(object sender, EventArgs e)
+        private async void CopyPassword_Clicked(object sender, EventArgs e)
         {
-            //TODO: Copy new password to clipboard
+            
+
+            await Clipboard.Default.SetTextAsync(password);
+
+            await DisplayAlert("Copied", "New Passwored has been copied to clipboard! 👉👈", "OK");
 
         }
+        // private async Task ClearClipboard() =>await Clipboard.Default.SetTextAsync(null);
     }
 
 }
