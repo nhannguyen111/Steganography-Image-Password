@@ -23,16 +23,29 @@ public partial class OptionAPage : ContentPage
                 FileTypes = FilePickerFileType.Images
             });
 
-            if (result != null)
+            if (result == null)
+                return;
+
+            // 1) Load the file into a MemoryStream
+            using var originalStream = await result.OpenReadAsync();
+            var memoryStream = new MemoryStream();
+            await originalStream.CopyToAsync(memoryStream);
+
+            // 2) Reset to start before MAUI reads it
+            memoryStream.Position = 0;
+
+            // 3) Swap out the placeholder for the chosen image
+            MyImageControl.Source = ImageSource.FromStream(() =>
             {
-                using var originalStream = await result.OpenReadAsync();
-
-                var memoryStream = new MemoryStream();
-                await originalStream.CopyToAsync(memoryStream);
+                // if MAUI re-reads the stream, ensure it's at 0
                 memoryStream.Position = 0;
+                return memoryStream;
+            });
 
-                //MyImageControl.Source = ImageSource.FromStream(() => memoryStream);
-            }
+            // — optional: if you want to extract metadata now —
+            // var converter = new ConvertImage();
+            // string data = converter.DataDump(result.FullPath);
+            // MetadataLabel.Text = data;
         }
         catch (Exception ex)
         {
