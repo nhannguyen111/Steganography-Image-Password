@@ -3,60 +3,84 @@
      xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
      x:Class="SteganographyApp.OptionAPage"
-     Title="Option A">
+     Title="Password to Image"
+     BackgroundColor="#981E32">
 
-    <VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25" HorizontalOptions="Center">
 
-        <ScrollView>
-            <VerticalStackLayout Padding="30,0" Spacing="25">
+            <!-- Page Title -->
+            <Label
+                Text="Password to Image Preview"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#333"
+                HorizontalOptions="Center" />
 
-                <!-- Preview area -->
-                <StackLayout>
-                    <Label
-             Text="Password To Image Preview!"
-             Style="{StaticResource Headline}"
-             SemanticProperties.HeadingLevel="Level1" />
+            <!-- Image Preview with Frame -->
+            <Frame Padding="15"
+                   CornerRadius="16"
+                   HasShadow="True"
+                   BackgroundColor="White"
+                   HorizontalOptions="Center">
 
-                    <!-- This is the image that the user taps to pick a new one -->
-                    <Image
-             x:Name="MyImageControl"
-             Source="select_an_image.png"
-             HeightRequest="250"
-             WidthRequest="250"
-             Aspect="AspectFit"
-             Margin="10">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer
-                 Tapped="UploadBtn_Clicked" />
-                        </Image.GestureRecognizers>
-                    </Image>
-                </StackLayout>
+                <Image
+                    x:Name="MyImageControl"
+                    Source="select_an_image.png"
+                    HeightRequest="250"
+                    WidthRequest="250"
+                    Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="UploadBtn_Clicked" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Frame>
 
-                <StackLayout>
-                    <Entry
-                     x:Name="UserKey"
-                     Placeholder="Enter a custom pin for this password here"
-                     HorizontalOptions="Fill" />
-                </StackLayout>
-
-                <!-- Copy button -->
-                <StackLayout>
-                    <Button
-             
+            <!-- Create Password Button -->
+            <Button
                 x:Name="CreatePassword"
                 Text="Create Password"
-                Clicked="CreatePassword_Clicked" />
-                </StackLayout>
+                Clicked="CreatePassword_Clicked"
+                BackgroundColor="#007AFF"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="18"
+                WidthRequest="320"
+                CornerRadius="12"
+                HeightRequest="50"
+                HorizontalOptions="Center" />
 
-                <StackLayout>
-                    <Entry
-                     x:Name="UserPassword"
-                     Placeholder="Press create password to generate one"
-                     HorizontalOptions="Fill" />
-                </StackLayout>
+            <!-- Password Display + Copy Button -->
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
 
-            </VerticalStackLayout>
-        </ScrollView>
+                <!-- Read-only password display -->
+                <Entry
+                    x:Name="UserPassword"
+                    Placeholder="Your password will appear here"
+                    IsReadOnly="True"
+                    FontSize="16"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    WidthRequest="260"
+                    HeightRequest="50"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center" />
 
-    </VerticalStackLayout>
+                <!-- Copy button -->
+                <Button
+                    Text="⧉"
+                    Clicked="CopyPassword_Clicked"
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    BackgroundColor="#007AFF"
+                    TextColor="White"
+                    FontSize="20"
+                    CornerRadius="10"
+                    VerticalOptions="Center"
+                    HorizontalOptions="End" />
+            </HorizontalStackLayout>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
