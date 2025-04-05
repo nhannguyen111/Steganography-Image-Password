@@ -1,3 +1,5 @@
+﻿using SteganographyApp.ImageToMetaData;
+using System.Diagnostics;
 ﻿using System.Threading.Tasks;
 
 namespace SteganographyApp
@@ -8,6 +10,12 @@ namespace SteganographyApp
         public MainPage()
         {
             InitializeComponent();
+            ConvertImage convertImage = new ConvertImage();
+            string data = convertImage.DataDump(@"C:\Users\justi\Downloads\Ocean.gif");
+            //foreach (char x in data.ToCharArray()) {
+            //    Debug.WriteLine();
+            //}
+            
         }
 
         private void OnOpenUserConfigWindowClicked(object sender, EventArgs e)

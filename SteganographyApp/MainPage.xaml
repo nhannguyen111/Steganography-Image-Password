@@ -4,6 +4,7 @@
              x:Class="SteganographyApp.MainPage"
              BackgroundColor="#f9f9f9">
 
+
     <Grid RowDefinitions="*,Auto">
         <!-- Main grid layout for buttons -->
         <Grid Grid.Row="0" ColumnDefinitions="*,*">
@@ -37,6 +38,7 @@
                 VerticalOptions="Fill"
                 Clicked="OnOptionBClicked" />
         </Grid>
+
 
         <!-- Floating action button in bottom right corner -->
         <Grid Grid.Row="1">
