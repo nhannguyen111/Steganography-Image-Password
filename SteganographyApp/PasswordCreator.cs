@@ -40,7 +40,7 @@ namespace SteganographyApp
             }
 
             // Normalize password
-            
+            return PasswordValidator.CreateValidPassword(currPassword, passwordLength);
 
             return currPassword;
         }
