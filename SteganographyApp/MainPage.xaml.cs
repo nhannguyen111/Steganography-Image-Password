@@ -11,9 +11,11 @@ namespace SteganographyApp
         {
             InitializeComponent();
             ConvertImage convertImage = new ConvertImage();
-            //string data = convertImage.DataDump(@"C:\Users\justi\OneDrive\Pictures\goat.jpg");
-           //Debug.WriteLine(data);
-
+            //string data = convertImage.DataDump(@"C:\Users\justi\Downloads\Ocean.gif");
+            //foreach (char x in data.ToCharArray()) {
+            //    Debug.WriteLine();
+            //}
+            
         }
 
         private void OnOpenUserConfigWindowClicked(object sender, EventArgs e)
