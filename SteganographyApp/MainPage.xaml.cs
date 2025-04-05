@@ -20,6 +20,15 @@
 
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
+
+        private void OnOpenUserConfigWindowClicked(object sender, EventArgs e)
+        {
+            var UserConfigPopUp = new UserConfigPopUp();
+
+            var newWindow = new Window(UserConfigPopUp);
+            Application.Current.OpenWindow(newWindow);
+        }
+
     }
 
 }
