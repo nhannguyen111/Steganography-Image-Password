@@ -34,6 +34,7 @@ namespace SteganographyApp.ImageToMetaData
             {
                 //Debug.WriteLine(line);
                 metaData = metaData + line + "\n";
+
             }
 
             return metaData;
