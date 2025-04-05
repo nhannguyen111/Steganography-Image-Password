@@ -3,11 +3,14 @@
 public partial class OptionAPage : ContentPage
 {
 
-    string password = "test";
+    string password;
 	public OptionAPage()
 	{
 		InitializeComponent();
-	}
+
+        password = "bestpasswordeverlmaooo";
+        PasswordDisplay.Text = password;
+    }
 
     // Event handling the uploaded image
     private async void UploadBtn_Clicked(object sender, EventArgs e)
@@ -41,7 +44,7 @@ public partial class OptionAPage : ContentPage
     {
 
 
-        await Clipboard.Default.SetTextAsync(password);
+        await Clipboard.Default.SetTextAsync(PasswordDisplay.Text);
 
         await DisplayAlert("Copied", "New Passwored has been copied to clipboard! 👉👈", "OK");
 
