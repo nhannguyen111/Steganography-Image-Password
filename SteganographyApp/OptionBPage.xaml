@@ -13,7 +13,7 @@
                 Text="Password to Image Preview"
                 FontSize="28"
                 FontAttributes="Bold"
-                TextColor="#333"
+                TextColor="#FFFFFF"
                 HorizontalOptions="Center" />
 
             <!-- Image Preview -->
@@ -49,7 +49,7 @@
                 x:Name="GetPassword"
                 Text="Get Password"
                 Clicked="GetPassword_Clicked"
-                BackgroundColor="#34C759"
+                BackgroundColor="#B8612A"
                 TextColor="White"
                 FontAttributes="Bold"
                 FontSize="18"
@@ -80,7 +80,7 @@
                     Clicked="CopyPassword_Clicked"
                     WidthRequest="50"
                     HeightRequest="50"
-                    BackgroundColor="#007AFF"
+                    BackgroundColor="#B8612A"
                     TextColor="White"
                     FontSize="20"
                     CornerRadius="10"

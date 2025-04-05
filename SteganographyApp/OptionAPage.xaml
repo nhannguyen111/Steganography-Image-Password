@@ -14,7 +14,7 @@
                 Text="Password to Image Preview"
                 FontSize="28"
                 FontAttributes="Bold"
-                TextColor="#333"
+                TextColor="#FFFFFF"
                 HorizontalOptions="Center" />
 
             <!-- Image Preview with Frame -->
@@ -41,7 +41,7 @@
                 x:Name="CreatePassword"
                 Text="Create Password"
                 Clicked="CreatePassword_Clicked"
-                BackgroundColor="#007AFF"
+                BackgroundColor="#B62C7A"
                 TextColor="White"
                 FontAttributes="Bold"
                 FontSize="18"
@@ -72,7 +72,7 @@
                     Clicked="CopyPassword_Clicked"
                     WidthRequest="50"
                     HeightRequest="50"
-                    BackgroundColor="#007AFF"
+                    BackgroundColor="#B62C7A"
                     TextColor="White"
                     FontSize="20"
                     CornerRadius="10"
