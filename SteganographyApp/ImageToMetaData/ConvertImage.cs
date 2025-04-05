@@ -27,7 +27,7 @@ namespace SteganographyApp.ImageToMetaData
             string[] lines = rawContent.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
 
             // Take the first 100 lines (or all if fewer than 100)
-            var first200Lines = lines.Take(10);
+            var first200Lines = lines.Take(100);
 
             // Print each line
             foreach (string line in first200Lines)

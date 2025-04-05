@@ -1,4 +1,11 @@
-﻿namespace SteganographyApp;
+﻿using System;
+using System.IO;                       // ← for MemoryStream
+using System.Threading.Tasks;
+using Microsoft.Maui.Controls;         // ← for ImageSource
+using Microsoft.Maui.Storage;          // ← for FilePicker
+using SteganographyApp.ImageToMetaData;
+
+namespace SteganographyApp;
 
 public partial class OptionAPage : ContentPage
 {
